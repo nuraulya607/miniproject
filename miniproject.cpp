@@ -79,6 +79,16 @@ void hapusItem() {
     }
 }
 
+void totalData() {
+    int totalStok = 0;
+    int totalTopup = 0;
+    for (auto& i : inventory) totalStok += i.stok;
+    for (auto& p : pelanggan) totalTopup += p.TopUp;
+
+    cout << "Total Stok: " << totalStok << endl;
+    cout << "Total Top Up: Rp " << totalTopup << endl;
+}
+
 int main() {
     inisialisasiData();
     tampilkanInventory();
@@ -87,5 +97,6 @@ int main() {
     tampilkanInventory();
     hapusItem();
     tampilkanInventory();
+    totalData();
     return 0;
 }
