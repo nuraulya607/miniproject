@@ -55,6 +55,16 @@ void tampilkanPelanggan() {
     }
 }
 
+void tambahItem() {
+    Item item;
+    cout << "\n Tambah Item:\n";
+    cout << "Nama: "; cin >> ws; getline(cin, item.nama);
+    cout << "Stok: "; cin >> item.stok;
+    cout << "Harga: "; cin >> item.harga;
+    inventory.push_back(item);
+    cout << "Item berhasil ditambahkan!\n";
+    }
+
 int main() {
     inisialisasiData();
     // Tahap 1: Inisialisasi Data
@@ -62,7 +72,7 @@ int main() {
     // Tahap 2: Tampilkan Inventory
     tampilkanPelanggan();
     // Tahap 3: Tampilkan Pelanggan
-    cout << "Jumlah item: " << inventory.size() << endl;
-    cout << "Jumlah pelanggan: " << pelanggan.size() << endl;
+    tambahItem();
+    // Tahap 4: Tambah Item
     return 0;
 }
