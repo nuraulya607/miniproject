@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 struct Item {
@@ -32,9 +33,26 @@ void inisialisasiData() {
     cout << "Data berhasil diinisialisasi.\n";
 }
 
+void tampilkanInventory() {
+    cout << "Daftar Inventory:\n";
+    cout << left << setw(5) << "No" 
+         << setw(20) << "Nama" 
+         << setw(10) << "Stok" 
+         << setw(10) << "Harga" << "\n";
+
+    for (int i = 0; i < inventory.size(); i++) {
+        cout << setw(5) << (i + 1) 
+             << setw(20) << inventory[i].nama 
+             << setw(10) << inventory[i].stok 
+             << setw(10) << inventory[i].harga << "\n";
+    }
+}
+
 int main() {
     inisialisasiData();
-    // Output sementara untuk tahap 1
+    // Tahap 1: Inisialisasi Data
+    tampilkanInventory();
+    // Tahap 2: Tampilkan Inventory
     cout << "Jumlah item: " << inventory.size() << endl;
     cout << "Jumlah pelanggan: " << pelanggan.size() << endl;
     return 0;
