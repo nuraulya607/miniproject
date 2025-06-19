@@ -65,14 +65,27 @@ void tambahItem() {
     cout << "Item berhasil ditambahkan!\n";
     }
 
+void hapusItem() {
+    int no;
+    tampilkanInventory();
+    cout << "Nomor item yang ingin dihapus: ";
+    cin >> no;
+    no -= 1;
+    if (no >= 0 && no < inventory.size()) {
+        cout << "Item " << inventory[no].nama << " dihapus.\n";
+        inventory.erase(inventory.begin() + no);
+    } else {
+        cout << "Nomor tidak valid.\n";
+    }
+}
+
 int main() {
     inisialisasiData();
-    // Tahap 1: Inisialisasi Data
     tampilkanInventory();
-    // Tahap 2: Tampilkan Inventory
     tampilkanPelanggan();
-    // Tahap 3: Tampilkan Pelanggan
     tambahItem();
-    // Tahap 4: Tambah Item
+    tampilkanInventory();
+    hapusItem();
+    tampilkanInventory();
     return 0;
 }
