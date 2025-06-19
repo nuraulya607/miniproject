@@ -48,11 +48,20 @@ void tampilkanInventory() {
     }
 }
 
+void tampilkanPelanggan() {
+    cout << "Data Pelanggan:\n";
+    for (auto& p : pelanggan) {
+        cout << "- " << p.nama << " (Top Up: Rp " << p.TopUp << ")\n";
+    }
+}
+
 int main() {
     inisialisasiData();
     // Tahap 1: Inisialisasi Data
     tampilkanInventory();
     // Tahap 2: Tampilkan Inventory
+    tampilkanPelanggan();
+    // Tahap 3: Tampilkan Pelanggan
     cout << "Jumlah item: " << inventory.size() << endl;
     cout << "Jumlah pelanggan: " << pelanggan.size() << endl;
     return 0;
